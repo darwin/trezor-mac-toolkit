@@ -4,5 +4,5 @@ source "$(dirname "${BASH_SOURCE[0]}")/_config.sh" || true || source _config.sh 
 
 cd "$ROOT_DIR"
 
-./scripts/clean-trezor-core.sh
-./scripts/clean-python-trezor.sh
+./scripts/nuke-workdir.sh
+./scripts/nuke-repos.sh

@@ -4,5 +4,9 @@ source "$(dirname "${BASH_SOURCE[0]}")/_config.sh" || true || source _config.sh 
 
 cd "$ROOT_DIR"
 
-./scripts/clean-trezor-core.sh
-./scripts/clean-python-trezor.sh
+if [[ -z "$REPOS_DIR" ]]; then
+  echo_err "REPOS_DIR seems to be empty!"
+  exit 1
+fi
+
+rm -rf "$REPOS_DIR"/*
