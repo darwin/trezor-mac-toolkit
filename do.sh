@@ -16,6 +16,11 @@ if [[ "$1" == "emu" ]]; then
   exec ./scripts/cmd-emu.sh "$@"
 fi
 
+if [[ "$1" == "test" ]]; then
+  shift
+  exec ./scripts/cmd-test.sh "$@"
+fi
+
 if [ $# -eq 0 ]; then
   echo "no arguments provided"
   echo "please provide a command to run, e.g."
