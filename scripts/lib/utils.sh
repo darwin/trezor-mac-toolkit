@@ -21,3 +21,12 @@ echo_exec() {
   echo "(in $(pwd)) $ $@"
   exec "$@"
 }
+
+fail_if_micropython_not_present() {
+  MICROPYTHON_PATH="build/unix/micropython"
+  if [[ ! -f "$MICROPYTHON_PATH" ]]; then
+    echo_err "'$(pwd)/$MICROPYTHON_PATH' does not exist, you should run \`./do.sh build_unix\` command first"
+    exit ${1:-1}
+  fi
+}
+
