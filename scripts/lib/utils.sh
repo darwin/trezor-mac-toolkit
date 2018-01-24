@@ -11,3 +11,13 @@ popd() {
 echo_err() {
   printf "\e[31m%s\e[0m\n" "$*" >&2;
 }
+
+echo_cmd() {
+  echo "(in $(pwd)) $ $@"
+  "$@"
+}
+
+echo_exec() {
+  echo "(in $(pwd)) $ $@"
+  exec "$@"
+}

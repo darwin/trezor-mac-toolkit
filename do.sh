@@ -2,20 +2,18 @@
 
 set -e -o pipefail
 
-echo_cmd() {
-  echo "(in $(pwd)) $ $@"
-  "$@"
-}
-
 # ---------------------------------------------------------------------------------------------------------------------------
 
 cd "$(dirname "${BASH_SOURCE[0]}")"
 
 if [[ "$1" == "build_unix" ]]; then
   shift
-  cd repos/trezor-core
-  echo_cmd make build_unix "$@"
-  exit $?
+  exec ./scripts/cmd-build-unix.sh "$@"
+fi
+
+if [[ "$1" == "emu" ]]; then
+  shift
+  exec ./scripts/cmd-emu.sh "$@"
 fi
 
 if [ $# -eq 0 ]; then
