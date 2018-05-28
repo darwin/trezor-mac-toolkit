@@ -11,6 +11,7 @@ RUN apt-get install -y python python3 python3-pip
 # see https://github.com/trezor/trezor-core/blob/master/docs/build.md#debianubuntu
 RUN pip3 install --upgrade pip
 RUN pip3 install --no-cache-dir pyblake2
+RUN pip3 install click
 RUN apt-get install -y scons libsdl2-dev:i386 libsdl2-image-dev:i386 gcc-multilib
 
 VOLUME ["/trezor-mac-toolkit"]
