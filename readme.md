@@ -41,8 +41,8 @@ To invoke commands in the docker container:
 This is a wrapper command for convenience. It can be run on native macOS directly or via `docker-run.sh` 
 which invokes it by default inside the docker container. I also provide `ddo.sh` which stands for "docker do" as
 a shortcut for invoking `./scripts/docker-run.sh`.
- 
- ```bash
+
+```bash
  ./do.sh build_unix
 
  # or alternatively
@@ -51,14 +51,17 @@ a shortcut for invoking `./scripts/docker-run.sh`.
  # to enter shell inside the container:
  ./ddo.sh bash
  
- # note that trezor-mac-toolkit directory is mapped as a volume inside the container under /trezor-mac-toolkit
- ```
+```
 
-More examples:
+Note that trezor-mac-toolkit directory is mapped as a volume inside the container under `/trezor-mac-toolkit`.
+
+### More examples:
 
 ```bash
 ./ddo.sh test unit
 ./ddo.sh test device
 ./ddo.sh test coverage
-./ddo.sh test # will test all above 
+./ddo.sh test # will test all above
+
+./do.sh emu
 ```
