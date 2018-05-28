@@ -24,7 +24,7 @@ fi
 if [ $# -eq 0 ]; then
   echo "no arguments provided"
   echo "please provide a command to run, e.g."
-  echo "  do.sh fish"
+  echo "  do.sh bash"
   exit 1
 else
   echo "(in $(pwd)) [exec raw command] $ $@"

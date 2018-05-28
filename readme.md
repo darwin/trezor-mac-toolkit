@@ -50,7 +50,6 @@ a shortcut for invoking `./scripts/docker-run.sh`.
   
  # to enter shell inside the container:
  ./ddo.sh bash
- ./ddo.sh fish
  
  # note that trezor-mac-toolkit directory is mapped as a volume inside the container under /trezor-mac-toolkit
  ```
