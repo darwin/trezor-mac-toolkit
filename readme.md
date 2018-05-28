@@ -53,3 +53,12 @@ a shortcut for invoking `./scripts/docker-run.sh`.
  
  # note that trezor-mac-toolkit directory is mapped as a volume inside the container under /trezor-mac-toolkit
  ```
+
+More examples:
+
+```bash
+./ddo.sh test unit
+./ddo.sh test device
+./ddo.sh test coverage
+./ddo.sh test # will test all above 
+```
