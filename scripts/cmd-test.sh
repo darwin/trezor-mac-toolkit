@@ -8,16 +8,19 @@ cd "$TREZOR_CORE_DIR"
 
 fail_if_micropython_not_present
 
-cd "tests"
-
 if [[ "$1" == "unit" || -z $1 ]]; then
-  ./run_tests.sh
+  pipenv run make test
 fi
 
 if [[ "$1" == "device" || -z $1 ]]; then
-  PYTHONPATH="$PYTHON_TREZOR_DIR:${PYTHONPATH}" ./run_tests_device_emu.sh
+  # https://github.com/trezor/python-trezor#building-from-source
+  cd "$PYTHON_TREZOR_DIR"
+  python3 setup.py develop
+  cd "$TREZOR_CORE_DIR"
+  pipenv run make test_emu
 fi
 
 if [[ "$1" == "coverage" ]]; then
+  cd tests
   ./check_coverage.sh
 fi

@@ -43,9 +43,11 @@ which invokes it by default inside the docker container. I also provide `ddo.sh`
 a shortcut for invoking `./scripts/docker-run.sh`.
 
 ```bash
+ ./do.sh prepare # prepare python environments 
  ./do.sh build_unix
 
  # or alternatively
+ ./ddo.sh prepare
  ./ddo.sh build_unix
   
  # to enter shell inside the container:
@@ -58,6 +60,7 @@ Note that trezor-mac-toolkit directory is mapped as a volume inside the containe
 ### More examples:
 
 ```bash
+./ddo.sh prepare
 ./ddo.sh test unit
 ./ddo.sh test device
 ./ddo.sh test coverage

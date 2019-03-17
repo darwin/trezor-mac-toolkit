@@ -17,5 +17,15 @@ else
   echo "python-trezor repo already exists => skipping git clone"
 fi
 
+# https://github.com/trezor/trezor-core/blob/master/docs/build.md#build-instructions-for-emulator-unix-port
+brew install scons sdl2 sdl2_image pkg-config
+brew install protobuf
+
+pip3 install --upgrade setuptools
 pip3 install --no-cache-dir pyblake2
-brew install scons sdl2 sdl2_image
+pip3 install protobuf
+pip3 install pipenv
+pip3 install -U pytest
+
+# https://github.com/trezor/trezor-core/blob/master/docs/build.md#os-x
+echo "For building firmware follow https://github.com/trezor/trezor-core/blob/master/docs/build.md#os-x"

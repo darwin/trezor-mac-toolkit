@@ -6,3 +6,7 @@ cd "$ROOT_DIR"
 
 ./scripts/update-trezor-core.sh
 ./scripts/update-python-trezor.sh
+
+cd "$TREZOR_CORE_DIR"
+
+make vendor
